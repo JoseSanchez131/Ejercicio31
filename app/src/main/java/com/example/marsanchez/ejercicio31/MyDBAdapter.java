@@ -192,6 +192,12 @@ public class MyDBAdapter {
         String ciclo = query;
         db.delete(DATABASE_TABLE_ALUMNOS, "ciclo=?", new String[]{ciclo});
     }
+    public void eliminarPorCurso(String query)
+    {
+        String curso = query;
+        db.delete(DATABASE_TABLE_ALUMNOS, "curso=?", new String [] {curso});
+
+    }
 
     //Este método recibe 2 parámetros el nombre del alumno viejo , y el nombre del alumno nuevo a actualizar:
     public void cambioNombre(String nombreViejo, String nombreNuevo) {

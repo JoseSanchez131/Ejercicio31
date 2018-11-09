@@ -52,6 +52,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Eliminar alumno por ciclo" />
+    <Button
+        android:id="@+id/btnEliminarPorCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar alumno por curso" />
+
 
     <Button
         android:id="@+id/btnMostrarAlumnos"

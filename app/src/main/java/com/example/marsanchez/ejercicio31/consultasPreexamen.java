@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class consultasPreexamen extends AppCompatActivity implements View.OnClickListener {
     TextView texto;
     EditText et_filter, etViejoNombreAlumno, etNuevoNombreAlumno;
-    Button btnEliminarPorCiclo, btnMostrarAlumnos, btnUpdateNombreAlumno;
+    Button btnEliminarPorCiclo,btnEliminarPorCurso, btnMostrarAlumnos, btnUpdateNombreAlumno;
     private MyDBAdapter dbAdapter;
 
     @Override
@@ -27,6 +27,9 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
 
         btnEliminarPorCiclo = (Button) findViewById(R.id.btnEliminarPorCiclo);
         btnEliminarPorCiclo.setOnClickListener(this);
+
+        btnEliminarPorCurso = (Button) findViewById(R.id.btnEliminarPorCurso);
+        btnEliminarPorCurso.setOnClickListener(this);
 
         btnMostrarAlumnos = (Button) findViewById(R.id.btnMostrarAlumnos);
         btnMostrarAlumnos.setOnClickListener(this);
@@ -42,6 +45,10 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
         switch (view.getId()) {
 
             case R.id.btnEliminarPorCiclo:
+                eliminarAlumnoPorCiclo();
+                break;
+
+            case R.id.btnEliminarPorCurso:
                 eliminarAlumnoPorCiclo();
                 break;
 
@@ -73,6 +80,12 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
         dbAdapter.open();
         String query = et_filter.getText().toString();
         dbAdapter.eliminarAlumnoPorCiclo(query);
+    }
+    public void eliminarAlumnoPorCurso() {
+        dbAdapter = new MyDBAdapter(getApplicationContext());
+        dbAdapter.open();
+        String query = et_filter.getText().toString();
+        dbAdapter.eliminarPorCurso(query);
     }
 
     //Este método actualiza el nombre del Usuario.nombre que introduzcamos por String
