@@ -49,7 +49,7 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.btnEliminarPorCurso:
-                eliminarAlumnoPorCiclo();
+                eliminarPorCiclo();
                 break;
 
             case R.id.btnMostrarAlumnos:
@@ -62,6 +62,8 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
 
         }
     }
+
+
 
     public void mostrarAlumnos() {
         dbAdapter = new MyDBAdapter(getApplicationContext());
@@ -81,7 +83,7 @@ public class consultasPreexamen extends AppCompatActivity implements View.OnClic
         String query = et_filter.getText().toString();
         dbAdapter.eliminarAlumnoPorCiclo(query);
     }
-    public void eliminarAlumnoPorCurso() {
+    private void eliminarPorCiclo() {
         dbAdapter = new MyDBAdapter(getApplicationContext());
         dbAdapter.open();
         String query = et_filter.getText().toString();
