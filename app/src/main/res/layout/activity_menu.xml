@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="100dp">
+        android:padding="50dp">
 
         <Button
             android:id="@+id/btn3a"
@@ -52,5 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Consultas varias preexamen" />
+
+
     </LinearLayout>
 </LinearLayout>
